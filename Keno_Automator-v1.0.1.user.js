@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Keno Auto Picker
+// @name         Keno_Automator
 // @version      v1.0.1
 // @description  Automatically selects the keno picks when accessing the grarrly keno & bets the max bet
 // @author       Table (UN: _mega_blast_erke_)
