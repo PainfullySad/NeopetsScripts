@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Keno_Automator
-// @version      v1.0.1
-// @description  Automatically selects the keno picks when accessing the grarrl keno & bets a desired bet
+// @name         Keno Automator
+// @version      v1.0.2
+// @description  Automatically selects the keno picks when accessing the grarrly keno & bets the max bet
 // @author       Table (UN: _mega_blast_erke_)
 // @match        *.neopets.com/prehistoric/keno.phtml
 // @icon         https://www.neopets.com/favicon.ico
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     if (randomize) // Randomize mechanism (uses the same function as the quick pick button)
     {
-        random_eggs(eggAmount >= 2 ? eggAmount : 2);
+        random_eggs(eggAmount >= 2 ? eggAmount <= 10 ? eggAmount : 10 : 2);
     }
     else // Personal Pick mechanism
     {
