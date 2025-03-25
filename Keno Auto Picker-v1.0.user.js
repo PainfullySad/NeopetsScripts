@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Keno Auto Picker
-// @version      v1.0
+// @version      v1.0.1
 // @description  Automatically selects the keno picks when accessing the grarrly keno & bets the max bet
 // @author       Table (UN: _mega_blast_erke_)
 // @match        *.neopets.com/prehistoric/keno.phtml
@@ -14,10 +14,11 @@ $(document).ready(function() {
     // Do you want to use the Quick Pick to randomize the selections by the website?
     // If yes, change the next line to true
     var randomize = false;
+    var eggAmount = 10; // if you would like change the amount of eggs to randomize, change this number to a number between 2 and 10
 
     if (randomize) // Randomize mechanism (uses the same function as the quick pick button)
     {
-        random_eggs(10);
+        random_eggs(eggAmount >= 2 ? eggAmount : 2);
     }
     else // Personal Pick mechanism
     {
@@ -47,5 +48,6 @@ $(document).ready(function() {
     }
 
     // Inputs your bet
-    $('input[name="bet"]').val(desiredBet);
+    $('input[name="bet"]').val(desiredBet > 9999 ? 9999 : desiredBet);
+    show_chart();
 });
